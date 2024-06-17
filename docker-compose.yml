@@ -1,0 +1,16 @@
+version: "3"
+volumes:
+  db-app:
+
+services:
+  db:
+    image: postgres:11-alpine
+    container_name: db-workoutapi
+    environment:
+      POSTGRES_PASSWORD: workout
+      POSTGRES_USER: workout
+      POSTGRES_DB: workout
+    volumes:
+      - db-app:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
